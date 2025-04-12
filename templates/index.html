@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Mask Detection</title>
+</head>
+<body>
+    <h1>Live Mask Detection</h1>
+    <img src="{% url 'video_feed' %}" width="640" height="480">
+    
+    <script>
+    // Auto-reload page if stream breaks
+    setInterval(() => {
+        const img = document.querySelector('img');
+        img.src = img.src.split('?')[0] + '?' + Date.now();
+    }, 5000);
+    </script>
+</body>
+</html>
